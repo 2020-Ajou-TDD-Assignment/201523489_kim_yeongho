@@ -9,15 +9,6 @@ public class Game {
 		rolls[currentRoll++] = pins;
 	}
 	
-
-	public boolean isSpare(int rollIndex) {
-		return rolls[rollIndex] + rolls[rollIndex+1] == 10;
-	}
-	
-	public boolean isStrike(int rollIndex) {
-		return rolls[rollIndex] == 10;
-	}
-
 	public int score() {
 		int score = 0;
 		int rollIndex = 0;
@@ -37,11 +28,19 @@ public class Game {
 		
 		return score;
 	}
-
-
+	
+	public boolean isSpare(int rollIndex) {
+		return rolls[rollIndex] + rolls[rollIndex+1] == 10;
+	}
+	
+	public boolean isStrike(int rollIndex) {
+		return rolls[rollIndex] == 10;
+	}
+	
 	public int processStrike(int rollIndex) {
 		return rolls[rollIndex + 1] + rolls[rollIndex + 2];
 	}
+
 
 
 }
