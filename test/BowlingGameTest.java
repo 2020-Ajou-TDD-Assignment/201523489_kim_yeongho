@@ -19,6 +19,15 @@ public class BowlingGameTest {
 		}
 	}
 	
+	public void spare() {
+		g.roll(5);
+		g.roll(5);
+	}
+	
+	public void rollStrike() {
+		g.roll(10);
+	}
+	
 
 	@Test
 	public void testGutterGame() {
@@ -39,10 +48,19 @@ public class BowlingGameTest {
 		rollMany(17,0);
 		assertEquals(16, g.score());
 	}
-
-	public void spare() {
-		g.roll(5);
-		g.roll(5);
+	
+	@Test
+	public void testOnesStrike() {
+		rollStrike();
+		g.roll(3);
+		g.roll(4);
+		rollMany(16, 0);
+		assertEquals(24, g.score());
+		
 	}
+
+	
+
+	
 
 }
