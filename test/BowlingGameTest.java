@@ -33,7 +33,6 @@ public class BowlingGameTest {
 	}
 	
 	@Test
-	@Ignore
 	public void testOneSpare() {
 		g.roll(5);
 		g.roll(5); //spare
